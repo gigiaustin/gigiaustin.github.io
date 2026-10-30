@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gigi Austin · Spanish, Home & Belonging</title>
+<meta name="description" content="Gigi Austin: interpreter and Spanish support, El Nido Abundante in Floyd, Virginia, and the ALDEA cultural retreat in Argentina.">
+<meta property="og:title" content="Gigi Austin · Spanish, Home & Belonging">
+<meta property="og:description" content="Spanish support, a nest in the Blue Ridge, and a journey to the Argentine coast.">
+<meta property="og:image" content="img/gigi-retrato.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fbf6ee; --sand:#f3e9db; --paper:#ffffff;
+  --ink:#2a201b; --ink-2:#5a4b42; --ink-3:#8a7a6f; --line:#e7dccd;
+  --coral:#d4502f; --coral-d:#b43f22; --teal:#1d7f80; --teal-l:#d9efee;
+  --forest:#2f4a33; --forest-2:#3f5f42; --moss:#e7eee2;
+  --gold:#e6a23c; --dusk:#2b2433;
+  --r:18px; --r-lg:28px;
+  --shadow:0 1px 2px rgba(42,32,27,.06),0 8px 24px rgba(42,32,27,.08);
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.container{width:min(1160px,100% - 40px);margin-inline:auto}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--coral)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(32px,4.4vw,52px)}
+h3{font-size:22px}
+.lead{font-size:clamp(17px,1.6vw,19.5px);color:var(--ink-2)}
+em.es{font-family:var(--serif);font-style:italic;color:var(--teal)}
+section{padding:clamp(72px,10vw,128px) 0;position:relative}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15.5px;text-decoration:none;padding:15px 26px;border-radius:999px;transition:transform .2s ease,background .2s ease,box-shadow .2s ease;border:2px solid transparent;cursor:pointer;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 6px 18px rgba(212,80,47,.28)}
+.btn-coral:hover{background:var(--coral-d)}
+.btn-ghost{border-color:currentColor;color:var(--ink)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-gold{background:var(--gold);color:var(--dusk);box-shadow:0 8px 24px rgba(230,162,60,.35)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,246,238,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:var(--serif);font-size:24px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo .dot{width:30px;height:30px;border-radius:50%;background:conic-gradient(from 200deg,var(--coral),var(--gold),var(--teal),var(--coral));display:grid;place-items:center;color:#fff;font-size:15px;font-weight:700}
+.nav ul{display:flex;gap:30px;list-style:none}
+.nav ul a{text-decoration:none;font-weight:500;font-size:15px;color:var(--ink-2)}
+.nav ul a:hover{color:var(--coral)}
+.nav .btn{padding:11px 20px;font-size:14.5px}
+.menu-btn{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--ink);margin:5px auto;border-radius:2px;transition:.3s}
+
+/* hero */
+.hero{padding:clamp(40px,7vw,90px) 0 clamp(70px,9vw,120px)}
+.hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,80px);align-items:center}
+.hero h1{font-size:clamp(40px,5.2vw,66px);margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:var(--coral)}
+.hero .lead{max-width:540px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-places{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:38px;font-size:14px;color:var(--ink-3)}
+.hero-places span{display:flex;align-items:center;gap:8px}
+.hero-places i{width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block}
+.hero-places span:nth-child(2) i{background:var(--gold)}
+.portrait{position:relative;justify-self:center;width:min(460px,100%)}
+.portrait .frame{border-radius:240px 240px var(--r-lg) var(--r-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);position:relative;z-index:2}
+.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.portrait .blob{position:absolute;inset:auto -26px -26px auto;width:72%;height:62%;background:var(--teal);border-radius:var(--r-lg);z-index:1;opacity:.9}
+.portrait .sun{position:absolute;top:-18px;left:-22px;width:92px;height:92px;z-index:3}
+.portrait .tag{position:absolute;left:-18px;bottom:42px;z-index:3;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:var(--shadow);font-size:13.5px;line-height:1.35;max-width:210px}
+.portrait .tag b{display:block;font-family:var(--serif);font-size:17px}
+
+/* offerings */
+.offers{padding-top:0}
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.offer{background:var(--paper);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);text-decoration:none;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.offer:hover{transform:translateY(-6px);box-shadow:0 2px 4px rgba(42,32,27,.06),0 18px 40px rgba(42,32,27,.14)}
+.offer .ph{aspect-ratio:4/3;overflow:hidden}
+.offer .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.offer:hover .ph img{transform:scale(1.05)}
+.offer .bd{padding:24px 26px 28px;display:flex;flex-direction:column;gap:8px;flex:1}
+.offer .num{font-family:var(--serif);font-style:italic;color:var(--ink-3);font-size:15px}
+.offer p{color:var(--ink-2);font-size:15.5px;flex:1}
+.offer .go{font-weight:700;font-size:15px;color:var(--coral);display:flex;align-items:center;gap:8px;margin-top:6px}
+.offer:nth-child(2) .go{color:var(--forest-2)}
+.offer:nth-child(3) .go{color:#b97a17}
+
+/* spanish */
+.spanish .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,84px);align-items:center}
+.spanish .media{position:relative}
+.spanish .media img{border-radius:var(--r-lg);aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:var(--shadow)}
+.spanish .media .bubble{position:absolute;right:-18px;top:28px;background:var(--coral);color:#fff;font-family:var(--serif);font-style:italic;font-size:19px;padding:14px 20px;border-radius:20px 20px 4px 20px;box-shadow:var(--shadow)}
+.spanish h2{margin:14px 0 18px}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}
+.svc div{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 16px}
+.svc .ic{width:38px;height:38px;border-radius:12px;background:var(--teal-l);color:var(--teal);display:grid;place-items:center;margin-bottom:10px}
+.svc .ic svg{width:20px;height:20px}
+.svc b{display:block;font-size:16px}
+.svc span{font-size:14.5px;color:var(--ink-2)}
+.rate{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;background:var(--sand);border-radius:var(--r);padding:20px 24px}
+.rate .p{font-family:var(--serif);font-size:34px;font-weight:600;line-height:1}
+.rate .p small{font-family:var(--sans);font-size:15px;font-weight:500;color:var(--ink-2)}
+.rate .note{font-size:14px;color:var(--ink-2);flex:1;min-width:180px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+
+/* band */
+.band{background:var(--coral);color:#fff;padding:26px 0;overflow:hidden}
+.band .track{display:flex;gap:46px;white-space:nowrap;font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-style:italic;animation:marquee 38s linear infinite;width:max-content}
+.band .track span{display:flex;align-items:center;gap:46px}
+.band .track span::after{content:'✺';font-style:normal;font-size:.7em;opacity:.75}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* nido */
+.nido{background:var(--forest);color:#f4efe6}
+.nido .eyebrow{color:#e9c27a}
+.nido .lead{color:#d8d3c6}
+.nido-head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:46px}
+.nido-head h2{margin-top:14px}
+.nido-head h2 em{font-style:italic;color:#e9c27a}
+.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:14px}
+.mosaic figure{border-radius:var(--r);overflow:hidden;position:relative}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic .big{grid-row:span 2}
+.mosaic figcaption{position:absolute;left:12px;bottom:12px;background:rgba(20,30,22,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:999px}
+.nido-body{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(30px,5vw,60px);margin-top:54px;align-items:start}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;list-style:none}
+.feats li{display:flex;gap:12px;font-size:15.5px;color:#e4dfd3}
+.feats li svg{flex:none;width:22px;height:22px;color:#e9c27a;margin-top:2px}
+.feats li b{color:#fff;display:block}
+.stay{background:#f4efe6;color:var(--ink);border-radius:var(--r-lg);padding:28px 28px 30px}
+.stay .p{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1}
+.stay .p small{font-family:var(--sans);font-size:16px;font-weight:500;color:var(--ink-2)}
+.stay ul{list-style:none;margin:16px 0 22px;font-size:15px;color:var(--ink-2)}
+.stay li{padding:7px 0;border-top:1px solid var(--line)}
+.stay li:first-child{border-top:0}
+.stay .btn{width:100%;justify-content:center;margin-top:10px}
+.soon{margin-top:26px;border:1.5px dashed rgba(233,194,122,.55);border-radius:var(--r);padding:18px 22px;display:flex;gap:14px;align-items:center;color:#e4dfd3;font-size:15.5px}
+.soon b{color:#fff}
+.soon .pill{background:#e9c27a;color:var(--forest);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;flex:none}
+
+/* argentina */
+.arg-hero{min-height:min(92vh,820px);display:flex;align-items:flex-end;color:#fff;padding:0;background:var(--dusk)}
+.arg-hero .bg{position:absolute;inset:0;background:url('img/arg-atardecer.jpg') center 38%/cover}
+.arg-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,36,51,.15) 0%,rgba(43,36,51,.25) 40%,rgba(43,36,51,.92) 100%)}
+.arg-hero .container{position:relative;z-index:2;padding:0 0 clamp(54px,8vw,96px)}
+.arg-hero .eyebrow{color:var(--gold)}
+.arg-hero h2{font-size:clamp(46px,7.4vw,96px);margin:14px 0 8px}
+.arg-hero h2 em{font-style:italic;color:var(--gold)}
+.arg-hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,24px);opacity:.92}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips span{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.08);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:9px 16px;border-radius:999px;font-size:14.5px;font-weight:600}
+.arg{background:var(--dusk);color:#efe9f2;padding-top:clamp(64px,8vw,100px)}
+.arg .lead{color:#cfc6d6}
+.arg-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:start}
+.arg-intro h3{font-size:clamp(26px,3vw,34px);color:#fff}
+.arg-intro p+p{margin-top:14px}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,25px);line-height:1.4;color:var(--gold);border-left:3px solid var(--gold);padding-left:22px;margin-top:26px}
+.days{margin-top:70px;display:grid;grid-template-columns:repeat(7,1fr);gap:12px;counter-reset:d}
+.day{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:18px 16px 20px;transition:background .3s,border-color .3s}
+.day:hover{background:rgba(230,162,60,.1);border-color:rgba(230,162,60,.45)}
+.day small{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.day b{display:block;font-family:var(--serif);font-size:18px;font-weight:600;color:#fff;margin:6px 0 6px;line-height:1.2}
+.day span{font-size:13.5px;color:#bfb5c7;line-height:1.5;display:block}
+.days-note{font-size:13.5px;color:#a99fb2;margin-top:14px}
+.gallery{margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
+.gallery figure{border-radius:var(--r);overflow:hidden}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery .t{grid-row:span 2}
+.gallery .w{grid-column:span 2}
+.incl{margin-top:70px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.incl>div{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:26px}
+.incl h4{font-family:var(--serif);font-size:20px;font-weight:600;color:#fff;margin-bottom:12px}
+.incl ul{list-style:none;font-size:15px;color:#cfc6d6}
+.incl li{padding:6px 0 6px 24px;position:relative}
+.incl li::before{content:'';position:absolute;left:0;top:14px;width:10px;height:2px;background:var(--gold)}
+.incl .no li::before{background:#7b7085}
+.guide{display:flex;gap:16px;align-items:center}
+.guide .av{width:64px;height:64px;border-radius:50%;overflow:hidden;flex:none;border:2px solid var(--gold)}
+.guide .av img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.info{margin-top:56px;background:linear-gradient(120deg,#3a2f45,#2b2433 60%);border:1px solid rgba(230,162,60,.4);border-radius:var(--r-lg);padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center}
+.info h3{font-size:clamp(26px,3vw,34px);color:#fff}
+.info p{color:#cfc6d6;margin-top:10px}
+.info .when{display:flex;gap:22px;margin-top:20px;flex-wrap:wrap}
+.info .when div{font-size:13.5px;color:#a99fb2}
+.info .when b{display:block;color:#fff;font-size:17px;font-family:var(--serif);font-weight:600}
+.info .act{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.info .act .btn{justify-content:center}
+.info .act small{font-size:13px;color:#a99fb2;text-align:center}
+.disc{font-size:13px;color:#8f859a;margin-top:26px;text-align:center}
+
+/* about */
+.about .container{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,90px);align-items:center}
+.about .media{position:relative}
+.about .media img{border-radius:var(--r-lg);aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:var(--shadow)}
+.about .media::before{content:'';position:absolute;inset:-18px auto auto -18px;width:55%;height:45%;background:var(--gold);border-radius:var(--r-lg);z-index:-1;opacity:.85}
+.about h2{margin:14px 0 22px}
+.about p{color:var(--ink-2)}
+.about p+p{margin-top:16px}
+.threads{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.threads span{background:var(--paper);border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-size:14.5px;font-weight:600}
+.threads span:nth-child(1){color:var(--teal)}
+.threads span:nth-child(2){color:var(--forest-2)}
+.threads span:nth-child(3){color:#b97a17}
+.sig{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--coral);margin-top:28px}
+
+/* contact */
+.contact{background:var(--sand);text-align:center}
+.contact h2{max-width:760px;margin:14px auto 16px}
+.contact .lead{max-width:560px;margin:0 auto}
+.contact .ctas{justify-content:center;margin-top:34px}
+footer{background:var(--ink);color:#cbbfb5;padding:46px 0 36px;font-size:14px}
+footer .container{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer .logo{color:#fff;font-size:21px}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
+
+/* whatsapp float */
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s}
+.wa:hover{transform:scale(1.07)}
+.wa svg{width:30px;height:30px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.band .track{animation:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:1020px){
+  .days{grid-template-columns:repeat(4,1fr)}
+  .incl{grid-template-columns:1fr 1fr}
+  .incl>div:last-child{grid-column:span 2}
+}
+@media (max-width:880px){
+  .nav ul,.nav .btn{display:none}
+  .menu-btn{display:block}
+  .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--line);padding:8px 20px 18px}
+  .nav.open ul a{display:block;padding:14px 0;font-size:17px;border-bottom:1px solid var(--line)}
+  .nav.open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav.open .menu-btn span:nth-child(2){opacity:0}
+  .nav.open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .hero .container,.spanish .container,.nido-head,.nido-body,.arg-intro,.about .container,.info{grid-template-columns:1fr}
+  .portrait{max-width:400px;margin-top:10px}
+  .offer-grid{grid-template-columns:1fr}
+  .offer{flex-direction:row}
+  .offer .ph{width:38%;aspect-ratio:auto;flex:none}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:260px 180px 180px}
+  .mosaic .big{grid-column:span 2;grid-row:auto}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+  .gallery .w{grid-column:span 2}
+  .about .media{max-width:440px}
+}
+@media (max-width:600px){
+  body{font-size:16.5px}
+  .container{width:calc(100% - 32px)}
+  .offer{flex-direction:column}
+  .offer .ph{width:100%;aspect-ratio:16/10}
+  .svc,.feats{grid-template-columns:1fr}
+  .days{grid-template-columns:1fr 1fr}
+  .incl{grid-template-columns:1fr}
+  .incl>div:last-child{grid-column:auto}
+  .spanish .media .bubble{right:10px;top:16px;font-size:16px}
+  .portrait .tag{left:8px;bottom:18px}
+  .portrait .sun{left:-6px;width:70px;height:70px}
+  .portrait .blob{inset:auto -10px -14px auto}
+  .mosaic{grid-template-rows:220px 150px 150px}
+  .btn{padding:14px 22px}
+  .hero-ctas .btn,.contact .ctas .btn{width:100%;justify-content:center}
+}
+.arg .lead b{color:#fff}.gname{color:#fff;font-family:var(--serif);font-size:19px}.gsub{font-size:14.5px;color:#bfb5c7}
+/* language switch */
+.nav-r{display:flex;align-items:center;gap:12px}
+.lang{display:flex;background:var(--sand);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.lang button{border:0;background:none;font:700 13px/1 var(--sans);letter-spacing:.04em;padding:8px 11px;border-radius:999px;cursor:pointer;color:var(--ink-2);transition:background .2s,color .2s}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+@media (max-width:880px){.nav-r .btn{display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#top" class="logo"><span class="dot">G</span>Gigi Austin</a>
+    <ul id="menu">
+      <li><a href="#spanish" data-es="Español">Spanish</a></li>
+      <li><a href="#nido">El Nido</a></li>
+      <li><a href="#argentina">Argentina</a></li>
+      <li><a href="#about" data-es="Sobre mí">About</a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="lang" role="group" aria-label="Language / Idioma">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="btn btn-coral" href="#contact" data-es="Escríbeme">Get in touch</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="rv">
+      <span class="eyebrow" data-es="Intérprete · Anfitriona · Tejedora de puentes">Interpreter · Host · Bridge-builder</span>
+      <h1 data-es="Abriendo puertas entre <em>idiomas</em>, hogares y culturas.">Opening doors between <em>languages</em>, homes &amp; cultures.</h1>
+      <p class="lead" data-es="Soy Gigi. Después de años como nómada profesional, armé mi nido en las montañas Blue Ridge de Virginia. Desde aquí ayudo a las personas a resolver su vida en español, comparto mi hogar y te invito a la costa argentina a recordar lo que se siente pertenecer.">I'm Gigi. After years as a professional nomad, I made a nest in the Blue Ridge of Virginia. From here I help people navigate life in Spanish, share my home, and invite you to the Argentine coast to remember what it feels like to belong.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-coral" href="#offers"><span data-es="Mira lo que ofrezco">Explore what I offer</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a class="btn btn-ghost" href="#argentina" data-es="Retiro en Argentina">Argentina retreat</a>
+      </div>
+      <div class="hero-places"><span><i></i>Floyd, Virginia</span><span><i></i>Chapadmalal, Argentina</span><span><i style="background:var(--coral)"></i><span data-es="Online, desde cualquier lugar">Online, anywhere</span></span></div>
+    </div>
+    <div class="portrait rv">
+      <svg class="sun" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#e6a23c" stroke-width="5" stroke-linecap="round"><circle cx="50" cy="50" r="17" fill="#e6a23c"/><path d="M50 8v12M50 80v12M8 50h12M80 50h12M20 20l9 9M71 71l9 9M80 20l-9 9M29 71l-9 9"/></g></svg>
+      <div class="frame"><img src="img/gigi-retrato.jpg" alt="Gigi Austin"></div>
+      <div class="blob"></div>
+      <div class="tag"><b>¡Hola! Hi!</b>English · Español · Spanglish</div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERINGS -->
+<section class="offers" id="offers">
+  <div class="container">
+    <div class="offer-grid">
+      <a class="offer rv" href="#spanish">
+        <div class="ph"><img src="img/gigi-tertulia.jpg" alt="Tertulia" loading="lazy" style="object-position:50% 8%"></div>
+        <div class="bd"><span class="num">01</span><h3 data-es="Español a tu medida">Spanish for Your Needs</h3><p data-es="Interpretación, ayuda con traducciones y conversación, en persona u online.">Interpreting, translation help and conversation, in person or online.</p><span class="go" data-es="Saber más →">Learn more →</span></div>
+      </a>
+      <a class="offer rv" href="#nido">
+        <div class="ph"><img src="img/nido-01.jpg" alt="El Nido Abundante" loading="lazy"></div>
+        <div class="bd"><span class="num">02</span><h3>El Nido Abundante</h3><p data-es="Una habitación tranquila en una casa de campo de 1950 en Floyd, Virginia.">A peaceful room in a 1950 farmhouse in Floyd, Virginia.</p><span class="go" data-es="Conoce el nido →">See the nest →</span></div>
+      </a>
+      <a class="offer rv" href="#argentina">
+        <div class="ph"><img src="img/arg-acantilado.jpg" alt="Chapadmalal, Argentina" loading="lazy"></div>
+        <div class="bd"><span class="num">03</span><h3>La Experiencia Cultural</h3><p data-es="ALDEA: siete días en la costa argentina. Sesión informativa gratis por Zoom.">ALDEA: seven days on the Argentine coast. Free info session on Zoom.</p><span class="go" data-es="Descubre ALDEA →">Discover ALDEA →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SPANISH -->
+<section class="spanish" id="spanish">
+  <div class="container">
+    <div class="media rv">
+      <img src="img/gigi-tertulia.jpg" alt="Tertulia: Practice your Spanish, ¡practica tu inglés!" loading="lazy">
+      <div class="bubble" data-es="How can I help?">¿En qué te ayudo?</div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow" data-es="01 · Español a tu medida">01 · Spanish for Your Needs</span>
+      <h2 data-es="Tu <em class='es'>handywoman</em> del español.">Your Spanish <em class="es">handywoman.</em></h2>
+      <p class="lead" data-es="Soy intérprete y tengo una larga trayectoria en educación y viajes. Lo que necesites resolver en español, desde una llamada hasta un proyecto continuo, aquí estoy para ayudarte, en persona u online.">I'm a working interpreter with a long career in education and travel. Whatever you need to get done in Spanish, from one phone call to an ongoing project, I'm here to help, in person or online.</p>
+      <div class="svc">
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><b data-es="Llamadas y citas">Calls &amp; appointments</b><span data-es="Interpretación con médicos, oficinas, caseros y servicios.">Interpreting for doctors, offices, landlords and services.</span></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span><b data-es="Cartas y mensajes">Letters &amp; messages</b><span data-es="Ayuda para entender y escribir correos, cartas y mensajes.">Help understanding and writing emails, letters and texts.</span></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b data-es="Conversación y tertulias">Conversation &amp; tertulias</b><span data-es="Practica tu español en un círculo relajado y amigable.">Practice your Spanish in a relaxed, friendly circle.</span></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><b data-es="Clases a la medida">Tailored lessons</b><span data-es="Español para viajar, trabajar, la familia o mudarte al extranjero.">Spanish for travel, work, family or a move abroad.</span></div>
+      </div>
+      <div class="rate">
+        <div class="p">$__ <small data-es="/ hora">/ hour</small></div>
+        <div class="note" data-es="En persona en la zona de Floyd, o por Zoom desde cualquier lugar. ¿Proyectos más grandes o continuos? Escríbeme y te preparo una cotización.">In person around Floyd, or on Zoom from anywhere. Bigger or ongoing projects? Email me for a custom quote.</div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-coral" href="https://wa.me/1XXXXXXXXXX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6a11.8 11.8 0 0 0 5.6 1.4 11.8 11.8 0 0 0 8.4-20.2z"/></svg><span data-es="Escríbeme por WhatsApp">WhatsApp me</span></a>
+        <a class="btn btn-ghost" href="mailto:hello@gigiaustin.com?subject=Spanish%20support" data-es="Pide algo a medida por correo">Email a custom request</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND (bilingual by design) -->
+<div class="band" aria-hidden="true">
+  <div class="track">
+    <span>Practice your Spanish</span><span>¡Practica tu inglés!</span><span>Disfruto, cuido y defiendo</span><span>Un lugar donde podés ser quien sos</span>
+    <span>Practice your Spanish</span><span>¡Practica tu inglés!</span><span>Disfruto, cuido y defiendo</span><span>Un lugar donde podés ser quien sos</span>
+  </div>
+</div>
+
+<!-- EL NIDO -->
+<section class="nido" id="nido">
+  <div class="container">
+    <div class="nido-head">
+      <div class="rv">
+        <span class="eyebrow">02 · El Nido Abundante</span>
+        <h2 data-es="Un nido en las montañas <em>Blue Ridge.</em>">A nest in the <em>Blue Ridge.</em></h2>
+      </div>
+      <p class="lead rv" data-es="Mi alma pedía un nido, así que compré una casa de campo de 1950 en la Apalachia rural. Ahora observo la vida silvestre desde el porche, y me encantaría compartir este refugio contigo.">My soul was asking for a nest, so I bought a 1950 farmhouse in rural Appalachia. Now I watch the wildlife from the front porch, and I'd love to share this sanctuary with you.</p>
+    </div>
+
+    <div class="mosaic rv">
+      <figure class="big"><img src="img/nido-01.jpg" alt="El Nido Abundante, Floyd VA" loading="lazy"><figcaption>El Nido · Floyd, VA</figcaption></figure>
+      <figure><img src="img/nido-02.jpg" alt="Porch" loading="lazy"><figcaption data-es="El porche">The porch</figcaption></figure>
+      <figure><img src="img/nido-05.jpg" alt="Kitchen" loading="lazy"><figcaption data-es="Cocina con vista">Kitchen view</figcaption></figure>
+      <figure><img src="img/nido-11.jpg" alt="Bedroom" loading="lazy"><figcaption data-es="Tu habitación">Your room</figcaption></figure>
+      <figure><img src="img/nido-12.jpg" alt="Gigi's dog" loading="lazy"><figcaption data-es="El comité de bienvenida">Our welcome committee</figcaption></figure>
+    </div>
+
+    <div class="nido-body">
+      <div class="rv">
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg><div data-es="<b>Casa de campo de 1950</b>Pisos de madera, paredes de madera natural e interior ecléctico."><b>Charming 1950 farmhouse</b>Hardwood floors, natural wood walls and an eclectic interior.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0C8 8 10 7 10 4"/><path d="M5 22h14"/></svg><div data-es="<b>Estufa de leña y porche</b>Inviernos junto al fuego, veranos en el porche con la vista."><b>Woodstove &amp; porch</b>Cozy winters by the fire, summers on the porch with the view.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7S5 10 5 14.5a7 7 0 0 0 14 0C19 10 12 2.7 12 2.7z"/></svg><div data-es="<b>Manantial natural</b>Una propiedad tranquila rodeada de campos y cerros."><b>Natural spring</b>A peaceful property surrounded by fields and ridges.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/></svg><div data-es="<b>Floyd, un pueblo con comunidad</b>8 min del centro de Floyd · 40 min de Virginia Tech · 1 h de Roanoke."><b>Community-minded Floyd</b>8 min to downtown Floyd · 40 min to Virginia Tech · 1 hr to Roanoke.</div></li>
+        </ul>
+        <div class="soon"><span class="pill" data-es="Muy pronto">Coming soon</span><div data-es="<b>Talleres en El Nido.</b> Talleres y encuentros mensuales sobre vida sostenible."><b>Talleres at El Nido.</b> Monthly workshops and gatherings around sustainable living.</div></div>
+      </div>
+      <aside class="stay rv">
+        <span class="eyebrow" data-es="Habitación disponible">Room available</span>
+        <div class="p">$550 <small data-es="/ mes">/ month</small></div>
+        <ul>
+          <li data-es="Servicios incluidos">Utilities included</li>
+          <li data-es="Cama doble · baño compartido">Full bed · shared bath</li>
+          <li data-es="Lavadora y secadora, Wi-Fi, estacionamiento">Washer &amp; dryer, Wi-Fi, parking</li>
+          <li data-es="Estadía mínima de 1 mes · no se fuma">1-month minimum stay · no smoking</li>
+        </ul>
+        <a class="btn btn-coral" href="https://www.furnishedfinder.com/property/1022277_1" target="_blank" rel="noopener" data-es="Ver el anuncio completo">See the full listing</a>
+        <a class="btn btn-ghost" href="https://wa.me/1XXXXXXXXXX?text=Hi%20Gigi!%20I'd%20like%20to%20schedule%20a%20visit%20to%20El%20Nido." target="_blank" rel="noopener" data-es="Agenda una visita">Schedule a visit</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ARGENTINA HERO -->
+<section class="arg-hero" id="argentina">
+  <div class="bg" role="img" aria-label="Chapadmalal, Argentina"></div>
+  <div class="container rv">
+    <span class="eyebrow">03 · La Experiencia Cultural</span>
+    <h2 data-es="ALDEA · <em>El Arte de Pertenecer</em>">ALDEA · <em>The Art of Belonging</em></h2>
+    <p class="sub" data-es="Un retiro íntimo en la costa argentina. Un lugar donde podés ser exactamente quien sos.">An intimate retreat on the Argentine coast. A place where you can be exactly who you are.</p>
+    <div class="chips"><span data-es="7 días · 6 noches">7 days · 6 nights</span><span data-es="6 a 12 mujeres">6–12 women</span><span>Chapadmalal, Argentina</span><span>USD 1,800</span></div>
+  </div>
+</section>
+
+<section class="arg">
+  <div class="container">
+    <div class="arg-intro">
+      <div class="rv">
+        <h3 data-es="Descansar, compartir y conectar, sin nada que demostrar.">Rest, share, and connect, with nothing to prove.</h3>
+        <p class="lead" style="margin-top:16px" data-es="En <b>Tu Portal · Aldea de los Abrazos</b>, un hogar en la costa atlántica abre sus puertas a un grupo pequeño de mujeres que desean bajar el ritmo y vivir vínculos conscientes y sinceros. Esta edición está especialmente pensada para mujeres lesbianas de Estados Unidos.">At <b>Tu Portal · Aldea de los Abrazos</b>, a home on the Atlantic coast opens its doors to a small group of women who want to slow down and build honest, conscious connections. This edition is designed especially for lesbian women from the U.S.</p>
+        <p class="quote" data-es="“Un lugar donde no necesitás ser diferente para pertenecer.”">“A place where you don't need to be different to belong.”</p>
+      </div>
+      <div class="rv">
+        <p class="lead" data-es="Círculos de palabra y escucha profunda. Silencio, lectura y tiempo en la naturaleza. Comida fresca basada en plantas, cocinada y compartida en la aldea. Escritura, arte y creatividad. Caminatas por los acantilados, el Bosque Energético de Miramar, fogones, música y risas.">Circles of sharing and deep listening. Silence, reading and time in nature. Fresh plant-based meals cooked and shared in the village. Writing, art and creativity. Walks along the cliffs, the Energy Forest of Miramar, bonfires, music and laughter.</p>
+        <div class="guide" style="margin-top:28px">
+          <div class="av"><img src="img/arg-domos.jpg" alt="Mariela Tiboni" loading="lazy"></div>
+          <div data-es="<b class='gname'>Creado y guiado por la Lic. Mariela Tiboni</b><br><span class='gsub'>Licenciada en Nutrición · Biología y Espiritualidad · Fundadora de Tu Portal. Tu puente en inglés: Gigi.</span>"><b class="gname">Created &amp; guided by Lic. Mariela Tiboni</b><br><span class="gsub">Nutritionist · Biology &amp; Spirituality · Founder of Tu Portal. Your bridge in English: Gigi.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="days">
+      <div class="day rv" data-es="<small>Día 1</small><b>Llegar y ser recibida</b><span>Bienvenida, primera mesa compartida y círculo de apertura.</span>"><small>Day 1</small><b>Arrive &amp; be received</b><span>Welcome, first shared table and opening circle.</span></div>
+      <div class="day rv" data-es="<small>Día 2</small><b>El cuerpo como hogar</b><span>Movimiento suave, descanso, escritura y presencia.</span>"><small>Day 2</small><b>The body as home</b><span>Gentle movement, rest, writing and presence.</span></div>
+      <div class="day rv" data-es="<small>Día 3</small><b>La libertad de sentir</b><span>Arte, creatividad y expresión emocional.</span>"><small>Day 3</small><b>Freedom to feel</b><span>Art, creativity and emotional expression.</span></div>
+      <div class="day rv" data-es="<small>Día 4</small><b>La esencia del encuentro</b><span>Seminario de vínculos conscientes e intimidad.</span>"><small>Day 4</small><b>The essence of meeting</b><span>Seminar on conscious connection and intimacy.</span></div>
+      <div class="day rv" data-es="<small>Día 5</small><b>Naturaleza y silencio</b><span>Bosque Energético de Miramar y fogón.</span>"><small>Day 5</small><b>Nature &amp; silence</b><span>Energy Forest of Miramar and a bonfire.</span></div>
+      <div class="day rv" data-es="<small>Día 6</small><b>Reciprocidad y celebración</b><span>El mar, Chapadmalal y La Estafeta.</span>"><small>Day 6</small><b>Reciprocity &amp; celebration</b><span>The sea, Chapadmalal and La Estafeta.</span></div>
+      <div class="day rv" data-es="<small>Día 7</small><b>Llevar el hogar adentro</b><span>Desayuno de despedida y círculo de cierre.</span>"><small>Day 7</small><b>Bring home within</b><span>Farewell breakfast and closing circle.</span></div>
+    </div>
+    <p class="days-note" data-es="El itinerario se adapta al clima y al ritmo del grupo. Cada participante elige libremente su nivel de participación.">The itinerary adapts to the weather and the group's rhythm. Every participant chooses her own level of participation.</p>
+
+    <div class="gallery rv">
+      <figure class="t"><img src="img/arg-acantilado.jpg" alt="Chapadmalal" loading="lazy"></figure>
+      <figure class="w"><img src="img/mesa-cena.jpg" alt="Shared table" loading="lazy"></figure>
+      <figure class="t"><img src="img/arg-tu-portal.jpg" alt="Tu Portal, Aldea de los Abrazos" loading="lazy"></figure>
+      <figure><img src="img/arg-letrero.jpg" alt="Disfruto, cuido y defiendo Chapadmalal" loading="lazy"></figure>
+      <figure><img src="img/arg-domos.jpg" alt="Domes" loading="lazy"></figure>
+      <figure class="w"><img src="img/arg-cielo.jpg" alt="Coast" loading="lazy"></figure>
+      <figure class="w"><img src="img/comida.jpg" alt="Plant-based meal" loading="lazy"></figure>
+    </div>
+
+    <div class="incl">
+      <div class="rv" data-es="<h4>Tu hogar por 7 días</h4><ul><li>2 tiny houses y 3 domos, todos con baño privado</li><li>Domo de eventos, galerías cubiertas y fogón</li><li>Una casita de barro para encuentros individuales</li></ul>"><h4>Your home for 7 days</h4><ul><li>2 tiny houses &amp; 3 domes, all with private bath</li><li>Event dome, covered galleries &amp; fire pit</li><li>A small mud house for one-on-one moments</li></ul></div>
+      <div class="rv" data-es="<h4>Incluye</h4><ul><li>Alojamiento con baño privado</li><li>Desayunos, almuerzos y meriendas basados en plantas</li><li>Acompañamiento grupal, talleres y materiales</li><li>Fogones y visitas locales con traslados</li></ul>"><h4>Included</h4><ul><li>Lodging with private bathroom</li><li>Plant-based breakfasts, lunches &amp; snacks</li><li>Group guidance, workshops &amp; materials</li><li>Bonfires and local outings with transport</li></ul></div>
+      <div class="rv no" data-es="<h4>No incluye</h4><ul><li>Pasajes internacionales y traslados desde aeropuertos</li><li>Seguro de viaje</li><li>Cenas y gastos personales</li><li>Habitación individual (suplemento, según disponibilidad)</li></ul>"><h4>Not included</h4><ul><li>International flights &amp; airport transfers</li><li>Travel insurance</li><li>Dinners &amp; personal expenses</li><li>Single room (supplement, if available)</li></ul></div>
+    </div>
+
+    <div class="info rv">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)" data-es="Gratis · Online">Free · Online</span>
+        <h3 data-es="Únete a la sesión informativa por Zoom">Join the info session on Zoom</h3>
+        <p data-es="Conócenos, mira la aldea, pregunta todo sobre el viaje de enero y descubre si ALDEA es para ti. Sin compromiso.">Meet us, see the village, ask everything about the trip in January, and find out if ALDEA is right for you. No commitment.</p>
+        <div class="when">
+          <div data-es="<b>Mediados de noviembre</b>Fecha y hora por confirmar"><b>Mid-November</b>Date &amp; time TBA</div>
+          <div data-es="<b>Próximo retiro</b>Mediados de enero de 2027"><b>Next retreat</b>Mid-January 2027</div>
+          <div data-es="<b>Cupos</b>De 6 a 12 mujeres"><b>Spots</b>6 to 12 women</div>
+        </div>
+      </div>
+      <div class="act">
+        <a class="btn btn-gold" href="#ZOOM-LINK" data-es="Reserva tu lugar en Zoom">Save my spot on Zoom</a>
+        <a class="btn btn-light" href="#ALDEA-PDF" data-es="Lee el programa completo">Read the full program</a>
+        <small data-es="¿Preguntas? <a href='https://wa.me/1XXXXXXXXXX' style='color:#fff'>Escríbele a Gigi</a>">Questions? <a href="https://wa.me/1XXXXXXXXXX?text=Hi%20Gigi!%20I'm%20interested%20in%20the%20ALDEA%20retreat." style="color:#fff">Message Gigi</a></small>
+      </div>
+    </div>
+    <p class="disc" data-es="ALDEA es un retiro de bienestar, autoconocimiento y comunidad. No sustituye atención médica ni psicológica.">ALDEA is a wellness, self-discovery and community retreat. It is not a substitute for medical or psychological care.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="media rv"><img src="img/gigi-disfruto.jpg" alt="Gigi, Disfruto" loading="lazy"></div>
+    <div class="rv">
+      <span class="eyebrow" data-es="Sobre Gigi">About Gigi</span>
+      <h2 data-es="Una nómada que encontró su nido.">A nomad who found her nest.</h2>
+      <p class="lead" data-es="Durante años fui nómada profesional, trabajando en educación y viajes entre culturas y continentes. Hoy trabajo como intérprete y vivo en una casa de campo en Floyd, Virginia.">For years I was a professional nomad, working in education and travel across cultures and continents. Today I work as an interpreter, and I live in a farmhouse in Floyd, Virginia.</p>
+      <p data-es="Todo lo que ofrezco nace del mismo lugar: ayudar a que las personas se sientan en casa, en un idioma, en un hogar o en una comunidad. Ya sea que necesites una mano con el español, una habitación tranquila en las montañas o un viaje a la costa argentina, me encantaría acompañarte.">Everything I offer comes from the same place: helping people feel at home, in a language, in a house, or in a community. Whether you need a hand with Spanish, a peaceful room in the mountains, or a journey to the Argentine coast, I'd love to walk alongside you.</p>
+      <div class="threads"><span data-es="Idioma">Language</span><span data-es="Hogar">Home</span><span data-es="Pertenencia">Belonging</span></div>
+      <p class="sig">Disfruto, cuido y defiendo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container rv">
+    <span class="eyebrow">Let's talk · Hablemos</span>
+    <h2 data-es="Cuéntame qué necesitas. Te ayudo a encontrar el camino.">Tell me what you need. I'll help you find the way.</h2>
+    <p class="lead" data-es="La forma más rápida de contactarme es por WhatsApp. Para pedidos más detallados, escríbeme un correo.">The fastest way to reach me is WhatsApp. For detailed requests, send me an email.</p>
+    <div class="ctas">
+      <a class="btn btn-coral" href="https://wa.me/1XXXXXXXXXX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6a11.8 11.8 0 0 0 5.6 1.4 11.8 11.8 0 0 0 8.4-20.2z"/></svg>WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:hello@gigiaustin.com">hello@gigiaustin.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <a href="#top" class="logo"><span class="dot">G</span>Gigi Austin</a>
+    <nav><a href="#spanish" data-es="Español">Spanish</a><a href="#nido">El Nido</a><a href="#argentina">Argentina</a><a href="#about" data-es="Sobre mí">About</a></nav>
+    <span class="motto" data-es="Idioma · Hogar · Pertenencia">Language · Home · Belonging</span>
+  </div>
+  <div class="container" style="margin-top:22px;font-size:12.5px;color:#8d8077">© 2026 Gigi Austin · Floyd, Virginia</div>
+</footer>
+
+<a class="wa" href="https://wa.me/1XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6a11.8 11.8 0 0 0 5.6 1.4 11.8 11.8 0 0 0 8.4-20.2z"/></svg></a>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),btn=document.getElementById('menuBtn');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>10)},{passive:true});
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')})});
+
+  // Language: EN / ES
+  var titles={en:'Gigi Austin · Spanish, Home & Belonging',es:'Gigi Austin · Español, Hogar y Pertenencia'};
+  var nodes=document.querySelectorAll('[data-es]');
+  function setLang(l){
+    nodes.forEach(function(el){
+      if(el.dataset.en===undefined) el.dataset.en=el.innerHTML;
+      el.innerHTML = l==='es' ? el.dataset.es : el.dataset.en;
+    });
+    document.documentElement.lang=l;
+    document.title=titles[l];
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l)});
+    try{localStorage.setItem('gigi-lang',l)}catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+  var start='en';
+  try{
+    var q=new URLSearchParams(location.search).get('lang');
+    var saved=localStorage.getItem('gigi-lang');
+    start=q||saved||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en');
+  }catch(e){}
+  if(start==='es') setLang('es');
+
+  // Reveal on scroll
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
