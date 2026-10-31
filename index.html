@@ -286,6 +286,34 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
 .lang button{border:0;background:none;font:700 13px/1 var(--sans);letter-spacing:.04em;padding:8px 11px;border-radius:999px;cursor:pointer;color:var(--ink-2);transition:background .2s,color .2s}
 .lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
 @media (max-width:880px){.nav-r .btn{display:none}}
+.lang-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:clamp(44px,6vw,70px)}
+.lcard{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--coral);border-radius:var(--r-lg);padding:30px 30px 28px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.lcard.en{border-top-color:var(--teal)}
+.lcard .who{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#fbe7e1;color:var(--coral-d);padding:6px 12px;border-radius:999px}
+.lcard.en .who{background:var(--teal-l);color:var(--teal)}
+.lcard h3{font-size:clamp(24px,2.4vw,30px);margin:16px 0 4px}
+.lcard .tl{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--coral);margin-bottom:12px}
+.lcard.en .tl{color:var(--teal)}
+.lcard p{color:var(--ink-2);font-size:15.5px}
+.lcard ul{list-style:none;margin:18px 0 24px;display:grid;gap:8px}
+.lcard li{position:relative;padding-left:28px;font-size:15.5px;font-weight:500}
+.lcard li::before{content:'✓';position:absolute;left:0;top:0;color:var(--coral);font-weight:900}
+.lcard.en li::before{color:var(--teal)}
+.lfoot{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;border-top:1px solid var(--line);padding-top:20px}
+.lp{font-size:14px;color:var(--ink-2)}
+.lp b{font-family:var(--serif);font-size:30px;color:var(--ink);margin:0 4px}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 6px 18px rgba(29,127,128,.28)}
+.btn-teal:hover{background:#16696a}
+.lnote{margin-top:22px;font-size:13.5px;color:var(--ink-3);text-align:center}
+.lnote a{color:var(--coral)}
+.rate .p small:first-child{margin-right:4px}
+@media (max-width:880px){.lang-cards{grid-template-columns:1fr}}
+@media (max-width:600px){.lcard{padding:24px 22px}.lfoot .btn{width:100%;justify-content:center}}
+.spanish .container.lang-cards{grid-template-columns:1fr 1fr;align-items:stretch;gap:22px}
+.spanish .container.lnote-wrap{display:block}
+@media (max-width:880px){.spanish .container.lang-cards{grid-template-columns:1fr}}
+.sig-tr{display:block;font-family:var(--sans);font-style:normal;font-size:14px;color:var(--ink-3);margin-top:4px}
+.sig-tr:empty{display:none}
 </style>
 </head>
 <body>
@@ -295,7 +323,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
   <div class="container">
     <a href="#top" class="logo"><span class="dot">G</span>Gigi Austin</a>
     <ul id="menu">
-      <li><a href="#spanish" data-es="Español">Spanish</a></li>
+      <li><a href="#spanish" data-es="Idiomas">Language</a></li>
       <li><a href="#nido">El Nido</a></li>
       <li><a href="#argentina">Argentina</a></li>
       <li><a href="#about" data-es="Sobre mí">About</a></li>
@@ -319,7 +347,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
     <div class="rv">
       <span class="eyebrow" data-es="Intérprete · Anfitriona · Tejedora de puentes">Interpreter · Host · Bridge-builder</span>
       <h1 data-es="Abriendo puertas entre <em>idiomas</em>, hogares y culturas.">Opening doors between <em>languages</em>, homes &amp; cultures.</h1>
-      <p class="lead" data-es="Soy Gigi. Después de años como nómada profesional, armé mi nido en las montañas Blue Ridge de Virginia. Desde aquí ayudo a las personas a resolver su vida en español, comparto mi hogar y te invito a la costa argentina a recordar lo que se siente pertenecer.">I'm Gigi. After years as a professional nomad, I made a nest in the Blue Ridge of Virginia. From here I help people navigate life in Spanish, share my home, and invite you to the Argentine coast to remember what it feels like to belong.</p>
+      <p class="lead" data-es="Soy Gigi. Después de años como nómada profesional, armé mi nido en las montañas Blue Ridge de Virginia. Desde aquí ayudo a las personas a resolver su vida en español y en inglés, comparto mi hogar y te invito a la costa argentina a recordar lo que se siente pertenecer.">I'm Gigi. After years as a professional nomad, I made a nest in the Blue Ridge of Virginia. From here I help people navigate life in Spanish and English, share my home, and invite you to the Argentine coast to remember what it feels like to belong.</p>
       <div class="hero-ctas">
         <a class="btn btn-coral" href="#offers"><span data-es="Mira lo que ofrezco">Explore what I offer</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
@@ -331,7 +359,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
       <svg class="sun" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#e6a23c" stroke-width="5" stroke-linecap="round"><circle cx="50" cy="50" r="17" fill="#e6a23c"/><path d="M50 8v12M50 80v12M8 50h12M80 50h12M20 20l9 9M71 71l9 9M80 20l-9 9M29 71l-9 9"/></g></svg>
       <div class="frame"><img src="img/gigi-retrato.jpg" alt="Gigi Austin"></div>
       <div class="blob"></div>
-      <div class="tag"><b>¡Hola! Hi!</b>English · Español · Spanglish</div>
+      <div class="tag" data-es="<b>¡Hola!</b>Español · Inglés"><b>Hi there!</b>English · Spanish</div>
     </div>
   </div>
 </section>
@@ -342,7 +370,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
     <div class="offer-grid">
       <a class="offer rv" href="#spanish">
         <div class="ph"><img src="img/gigi-tertulia.jpg" alt="Tertulia" loading="lazy" style="object-position:50% 8%"></div>
-        <div class="bd"><span class="num">01</span><h3 data-es="Español a tu medida">Spanish for Your Needs</h3><p data-es="Interpretación, ayuda con traducciones y conversación, en persona u online.">Interpreting, translation help and conversation, in person or online.</p><span class="go" data-es="Saber más →">Learn more →</span></div>
+        <div class="bd"><span class="num">01</span><h3 data-es="Apoyo con idiomas">Language Support</h3><p data-es="Español e inglés: clases, interpretación y apoyo, en persona u online. Desde $35/hora.">Spanish &amp; English instruction, interpretation and support, in person or online. From $35/hour.</p><span class="go" data-es="Saber más →">Learn more →</span></div>
       </a>
       <a class="offer rv" href="#nido">
         <div class="ph"><img src="img/nido-01.jpg" alt="El Nido Abundante" loading="lazy"></div>
@@ -350,46 +378,77 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
       </a>
       <a class="offer rv" href="#argentina">
         <div class="ph"><img src="img/arg-acantilado.jpg" alt="Chapadmalal, Argentina" loading="lazy"></div>
-        <div class="bd"><span class="num">03</span><h3>La Experiencia Cultural</h3><p data-es="ALDEA: siete días en la costa argentina. Sesión informativa gratis por Zoom.">ALDEA: seven days on the Argentine coast. Free info session on Zoom.</p><span class="go" data-es="Descubre ALDEA →">Discover ALDEA →</span></div>
+        <div class="bd"><span class="num">03</span><h3 data-es="La Experiencia Cultural">The Cultural Experience</h3><p data-es="ALDEA: siete días en la costa argentina. Sesión informativa gratis por Zoom.">ALDEA: seven days on the Argentine coast. Free info session on Zoom.</p><span class="go" data-es="Descubre ALDEA →">Discover ALDEA →</span></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- SPANISH -->
+<!-- LANGUAGE SUPPORT -->
 <section class="spanish" id="spanish">
   <div class="container">
     <div class="media rv">
       <img src="img/gigi-tertulia.jpg" alt="Tertulia: Practice your Spanish, ¡practica tu inglés!" loading="lazy">
-      <div class="bubble" data-es="How can I help?">¿En qué te ayudo?</div>
+      <div class="bubble" data-es="¿En qué te ayudo?">How can I help?</div>
     </div>
     <div class="rv">
-      <span class="eyebrow" data-es="01 · Español a tu medida">01 · Spanish for Your Needs</span>
-      <h2 data-es="Tu <em class='es'>handywoman</em> del español.">Your Spanish <em class="es">handywoman.</em></h2>
-      <p class="lead" data-es="Soy intérprete y tengo una larga trayectoria en educación y viajes. Lo que necesites resolver en español, desde una llamada hasta un proyecto continuo, aquí estoy para ayudarte, en persona u online.">I'm a working interpreter with a long career in education and travel. Whatever you need to get done in Spanish, from one phone call to an ongoing project, I'm here to help, in person or online.</p>
-      <div class="svc">
-        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><b data-es="Llamadas y citas">Calls &amp; appointments</b><span data-es="Interpretación con médicos, oficinas, caseros y servicios.">Interpreting for doctors, offices, landlords and services.</span></div>
-        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span><b data-es="Cartas y mensajes">Letters &amp; messages</b><span data-es="Ayuda para entender y escribir correos, cartas y mensajes.">Help understanding and writing emails, letters and texts.</span></div>
-        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b data-es="Conversación y tertulias">Conversation &amp; tertulias</b><span data-es="Practica tu español en un círculo relajado y amigable.">Practice your Spanish in a relaxed, friendly circle.</span></div>
-        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><b data-es="Clases a la medida">Tailored lessons</b><span data-es="Español para viajar, trabajar, la familia o mudarte al extranjero.">Spanish for travel, work, family or a move abroad.</span></div>
-      </div>
-      <div class="rate">
-        <div class="p">$__ <small data-es="/ hora">/ hour</small></div>
-        <div class="note" data-es="En persona en la zona de Floyd, o por Zoom desde cualquier lugar. ¿Proyectos más grandes o continuos? Escríbeme y te preparo una cotización.">In person around Floyd, or on Zoom from anywhere. Bigger or ongoing projects? Email me for a custom quote.</div>
-      </div>
-      <div class="ctas">
-        <a class="btn btn-coral" href="https://wa.me/1XXXXXXXXXX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6a11.8 11.8 0 0 0 5.6 1.4 11.8 11.8 0 0 0 8.4-20.2z"/></svg><span data-es="Escríbeme por WhatsApp">WhatsApp me</span></a>
-        <a class="btn btn-ghost" href="mailto:hello@gigiaustin.com?subject=Spanish%20support" data-es="Pide algo a medida por correo">Email a custom request</a>
+      <span class="eyebrow" data-es="01 · Apoyo con idiomas">01 · Language Support</span>
+      <h2 data-es="Apoyo con el idioma para <em class='es'>lo que más te importa.</em>">Language support for <em class="es">what matters most to you.</em></h2>
+      <p class="lead" data-es="Soy intérprete y tengo una larga trayectoria en educación y viajes. En español o en inglés, te ayudo a comunicarte con confianza, en persona u online.">I'm a working interpreter with a long career in education and travel. In Spanish or in English, I'll help you communicate with confidence, in person or online.</p>
+      <div class="rate" style="margin-top:28px">
+        <div class="p"><small data-es="Desde">Starting at</small> $35 <small data-es="/ hora">/ hour</small></div>
+        <div class="note" data-es="Mínimo una hora. El acompañamiento en viajes y las experiencias personalizadas se cotizan aparte.">One-hour minimum. Travel accompaniment and personalized experiences are priced individually.</div>
       </div>
     </div>
+  </div>
+
+  <div class="container lang-cards">
+    <article class="lcard rv">
+      <span class="who" data-es="Para angloparlantes">For English speakers</span>
+      <h3 data-es="Español para lo que necesites">Spanish for Your Needs</h3>
+      <p class="tl" data-es="Español práctico para experiencias reales.">Practical Spanish for real-life experiences.</p>
+      <p data-es="Clases, preparación y apoyo personalizados según tus metas. Ya sea que viajes a un país de habla hispana, te prepares para estudiar en el extranjero, vivas experiencias culturales o necesites ayuda con el idioma durante tu viaje, te ayudo a comunicarte con confianza.">Personalized Spanish instruction, preparation, and language support tailored to your goals. Whether you're traveling to a Spanish-speaking country, preparing to study abroad, navigating cultural experiences, or seeking language assistance during your travels, I'll help you communicate with confidence.</p>
+      <ul>
+        <li data-es="Viajes a países de habla hispana">Travel to Spanish-speaking countries</li>
+        <li data-es="Preparación para estudiar en el extranjero">Study-abroad preparation</li>
+        <li data-es="Experiencias culturales">Navigating cultural experiences</li>
+        <li data-es="Apoyo con el idioma durante tu viaje">Language help during your travels</li>
+      </ul>
+      <div class="lfoot">
+        <div class="lp"><span data-es="Desde">Starting at</span> <b>$35</b><span data-es="/hora · mínimo 1 h">/hour · 1-hour min.</span></div>
+        <a class="btn btn-coral" href="https://wa.me/1XXXXXXXXXX?text=Hi%20Gigi!%20I'm%20interested%20in%20Spanish%20support." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6a11.8 11.8 0 0 0 5.6 1.4 11.8 11.8 0 0 0 8.4-20.2z"/></svg><span data-es="Escríbeme">Contact me</span></a>
+      </div>
+    </article>
+
+    <article class="lcard en rv">
+      <span class="who" data-es="Para hispanohablantes en EE. UU.">For Spanish speakers in the U.S.</span>
+      <h3 data-es="Inglés para lo que necesites">English for Your Needs</h3>
+      <p class="tl" data-es="Apoyo práctico en inglés para la vida diaria.">Practical English support for everyday life.</p>
+      <p data-es="Clases de inglés, interpretación y apoyo con el idioma, personalizados, para ayudar a hispanohablantes a desenvolverse en Estados Unidos.">Personalized English instruction, interpretation, and language assistance to help Spanish speakers navigate life in the United States.</p>
+      <ul>
+        <li data-es="Citas médicas">Medical appointments</li>
+        <li data-es="Comunicación con la escuela">School communications</li>
+        <li data-es="Preparación para la licencia de conducir">Driver's license preparation</li>
+        <li data-es="Citas legales y relacionadas con inmigración">Legal and immigration-related appointments</li>
+        <li data-es="Otros trámites del día a día">Other everyday needs</li>
+      </ul>
+      <div class="lfoot">
+        <div class="lp"><span data-es="Desde">Starting at</span> <b>$35</b><span data-es="/hora · mínimo 1 h">/hour · 1-hour min.</span></div>
+        <a class="btn btn-teal" href="https://wa.me/1XXXXXXXXXX?text=Hola%20Gigi!%20Necesito%20apoyo%20con%20el%20ingl%C3%A9s." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6a11.8 11.8 0 0 0 5.6 1.4 11.8 11.8 0 0 0 8.4-20.2z"/></svg><span data-es="Escríbeme">Contact me</span></a>
+      </div>
+    </article>
+  </div>
+
+  <div class="container lnote-wrap">
+    <p class="lnote rv" data-es="Solo interpretación y apoyo con el idioma; Gigi no da asesoría legal. ¿Algo más específico? <a href='mailto:hello@gigiaustin.com'>Escríbeme por correo</a>.">Interpretation and language support only; Gigi does not provide legal advice. Something more specific? <a href="mailto:hello@gigiaustin.com?subject=Language%20support">Email me</a>.</p>
   </div>
 </section>
 
 <!-- BAND (bilingual by design) -->
 <div class="band" aria-hidden="true">
   <div class="track">
-    <span>Practice your Spanish</span><span>¡Practica tu inglés!</span><span>Disfruto, cuido y defiendo</span><span>Un lugar donde podés ser quien sos</span>
-    <span>Practice your Spanish</span><span>¡Practica tu inglés!</span><span>Disfruto, cuido y defiendo</span><span>Un lugar donde podés ser quien sos</span>
+    <span data-es="Practica tu español">Practice your Spanish</span><span data-es="¡Practica tu inglés!">Practice your English</span><span data-es="Disfruto, cuido y defiendo">I enjoy, I care, I protect</span><span data-es="Un lugar donde podés ser quien sos">A place where you can be who you are</span>
+    <span data-es="Practica tu español">Practice your Spanish</span><span data-es="¡Practica tu inglés!">Practice your English</span><span data-es="Disfruto, cuido y defiendo">I enjoy, I care, I protect</span><span data-es="Un lugar donde podés ser quien sos">A place where you can be who you are</span>
   </div>
 </div>
 
@@ -420,7 +479,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7S5 10 5 14.5a7 7 0 0 0 14 0C19 10 12 2.7 12 2.7z"/></svg><div data-es="<b>Manantial natural</b>Una propiedad tranquila rodeada de campos y cerros."><b>Natural spring</b>A peaceful property surrounded by fields and ridges.</div></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/></svg><div data-es="<b>Floyd, un pueblo con comunidad</b>8 min del centro de Floyd · 40 min de Virginia Tech · 1 h de Roanoke."><b>Community-minded Floyd</b>8 min to downtown Floyd · 40 min to Virginia Tech · 1 hr to Roanoke.</div></li>
         </ul>
-        <div class="soon"><span class="pill" data-es="Muy pronto">Coming soon</span><div data-es="<b>Talleres en El Nido.</b> Talleres y encuentros mensuales sobre vida sostenible."><b>Talleres at El Nido.</b> Monthly workshops and gatherings around sustainable living.</div></div>
+        <div class="soon"><span class="pill" data-es="Muy pronto">Coming soon</span><div data-es="<b>Talleres en El Nido.</b> Talleres y encuentros mensuales sobre vida sostenible."><b>Workshops at El Nido.</b> Monthly workshops and gatherings around sustainable living.</div></div>
       </div>
       <aside class="stay rv">
         <span class="eyebrow" data-es="Habitación disponible">Room available</span>
@@ -442,7 +501,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
 <section class="arg-hero" id="argentina">
   <div class="bg" role="img" aria-label="Chapadmalal, Argentina"></div>
   <div class="container rv">
-    <span class="eyebrow">03 · La Experiencia Cultural</span>
+    <span class="eyebrow" data-es="03 · La Experiencia Cultural">03 · The Cultural Experience</span>
     <h2 data-es="ALDEA · <em>El Arte de Pertenecer</em>">ALDEA · <em>The Art of Belonging</em></h2>
     <p class="sub" data-es="Un retiro íntimo en la costa argentina. Un lugar donde podés ser exactamente quien sos.">An intimate retreat on the Argentine coast. A place where you can be exactly who you are.</p>
     <div class="chips"><span data-es="7 días · 6 noches">7 days · 6 nights</span><span data-es="6 a 12 mujeres">6–12 women</span><span>Chapadmalal, Argentina</span><span>USD 1,800</span></div>
@@ -461,7 +520,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
         <p class="lead" data-es="Círculos de palabra y escucha profunda. Silencio, lectura y tiempo en la naturaleza. Comida fresca basada en plantas, cocinada y compartida en la aldea. Escritura, arte y creatividad. Caminatas por los acantilados, el Bosque Energético de Miramar, fogones, música y risas.">Circles of sharing and deep listening. Silence, reading and time in nature. Fresh plant-based meals cooked and shared in the village. Writing, art and creativity. Walks along the cliffs, the Energy Forest of Miramar, bonfires, music and laughter.</p>
         <div class="guide" style="margin-top:28px">
           <div class="av"><img src="img/arg-domos.jpg" alt="Mariela Tiboni" loading="lazy"></div>
-          <div data-es="<b class='gname'>Creado y guiado por la Lic. Mariela Tiboni</b><br><span class='gsub'>Licenciada en Nutrición · Biología y Espiritualidad · Fundadora de Tu Portal. Tu puente en inglés: Gigi.</span>"><b class="gname">Created &amp; guided by Lic. Mariela Tiboni</b><br><span class="gsub">Nutritionist · Biology &amp; Spirituality · Founder of Tu Portal. Your bridge in English: Gigi.</span></div>
+          <div data-es="<b class='gname'>Creado y guiado por la Lic. Mariela Tiboni</b><br><span class='gsub'>Licenciada en Nutrición · Biología y Espiritualidad · Fundadora de Tu Portal. Tu puente en inglés: Gigi.</span>"><b class="gname">Created &amp; guided by Mariela Tiboni</b><br><span class="gsub">Nutritionist · Biology &amp; Spirituality · Founder of Tu Portal. Your bridge in English: Gigi.</span></div>
         </div>
       </div>
     </div>
@@ -522,9 +581,9 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
       <span class="eyebrow" data-es="Sobre Gigi">About Gigi</span>
       <h2 data-es="Una nómada que encontró su nido.">A nomad who found her nest.</h2>
       <p class="lead" data-es="Durante años fui nómada profesional, trabajando en educación y viajes entre culturas y continentes. Hoy trabajo como intérprete y vivo en una casa de campo en Floyd, Virginia.">For years I was a professional nomad, working in education and travel across cultures and continents. Today I work as an interpreter, and I live in a farmhouse in Floyd, Virginia.</p>
-      <p data-es="Todo lo que ofrezco nace del mismo lugar: ayudar a que las personas se sientan en casa, en un idioma, en un hogar o en una comunidad. Ya sea que necesites una mano con el español, una habitación tranquila en las montañas o un viaje a la costa argentina, me encantaría acompañarte.">Everything I offer comes from the same place: helping people feel at home, in a language, in a house, or in a community. Whether you need a hand with Spanish, a peaceful room in the mountains, or a journey to the Argentine coast, I'd love to walk alongside you.</p>
+      <p data-es="Todo lo que ofrezco nace del mismo lugar: ayudar a que las personas se sientan en casa, en un idioma, en un hogar o en una comunidad. Ya sea que necesites una mano con el español o el inglés, una habitación tranquila en las montañas o un viaje a la costa argentina, me encantaría acompañarte.">Everything I offer comes from the same place: helping people feel at home, in a language, in a house, or in a community. Whether you need a hand with Spanish or English, a peaceful room in the mountains, or a journey to the Argentine coast, I'd love to walk alongside you.</p>
       <div class="threads"><span data-es="Idioma">Language</span><span data-es="Hogar">Home</span><span data-es="Pertenencia">Belonging</span></div>
-      <p class="sig">Disfruto, cuido y defiendo.</p>
+      <p class="sig" data-es="Disfruto, cuido y defiendo.">I enjoy, I care, I protect.</p>
     </div>
   </div>
 </section>
@@ -532,7 +591,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container rv">
-    <span class="eyebrow">Let's talk · Hablemos</span>
+    <span class="eyebrow" data-es="Hablemos">Let's talk</span>
     <h2 data-es="Cuéntame qué necesitas. Te ayudo a encontrar el camino.">Tell me what you need. I'll help you find the way.</h2>
     <p class="lead" data-es="La forma más rápida de contactarme es por WhatsApp. Para pedidos más detallados, escríbeme un correo.">The fastest way to reach me is WhatsApp. For detailed requests, send me an email.</p>
     <div class="ctas">
@@ -547,7 +606,7 @@ footer .motto{font-family:var(--serif);font-style:italic;color:var(--gold)}
 <footer>
   <div class="container">
     <a href="#top" class="logo"><span class="dot">G</span>Gigi Austin</a>
-    <nav><a href="#spanish" data-es="Español">Spanish</a><a href="#nido">El Nido</a><a href="#argentina">Argentina</a><a href="#about" data-es="Sobre mí">About</a></nav>
+    <nav><a href="#spanish" data-es="Idiomas">Language</a><a href="#nido">El Nido</a><a href="#argentina">Argentina</a><a href="#about" data-es="Sobre mí">About</a></nav>
     <span class="motto" data-es="Idioma · Hogar · Pertenencia">Language · Home · Belonging</span>
   </div>
   <div class="container" style="margin-top:22px;font-size:12.5px;color:#8d8077">© 2026 Gigi Austin · Floyd, Virginia</div>
